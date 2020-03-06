@@ -1,0 +1,25 @@
+version: 1
+rules:
+  # # expected のみ書くと、大文字小文字・全角半角が期待どおりかをチェックしてくれる
+  # - expected: Cookie
+  
+  # # 変換結果に対してのテストを記述する場合。「from」が「expected」と同値である「to」にするべき単語として検出されるか
+  # - expected: jQuery
+  #   specs:
+  #     - from: jquery
+  #       to:   jQuery
+  #     - from: ＪＱＵＥＲＹ
+  #       to:   jQuery
+  #     # もし to が誤っているとルールのロードに失敗するので、ルールのテストが書ける
+  
+  # # pattern にマッチするものは expeceted が本来の表記として統一ができる
+  # - expected: デフォルト
+  #   pattern:  ディフォルト
+  
+  # # 複数のパターンを書く場合
+  # - expected: ハードウェア
+  #   patterns:
+  #     - ハードウエアー
+  #     - ハードウェアー
+  #     - ハードウエア
+  #     # 正規表現に変換する都合上、より長いものを先に書いたほうがよい
