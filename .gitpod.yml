@@ -1,2 +1,6 @@
 image:
   file: .gitpod.dockerfile
+
+vscode:
+  extensions:
+    - taichi.vscode-textlint@0.7.1:Hvok7NbvU+sOw/9eCHmK3w==
