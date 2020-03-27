@@ -7,6 +7,8 @@ docs ディレクトリに md ファイル、画像ファイルを images ディ
 catalog.yml を自動生成するのでmdファイルをわけて管理する場合は、ファイルの命名を意識しないと意図したならびにならない。  
 意図したならびにしたい場合は、.gitlab-ci.yml の catalog.yml の自動生成ではなく自分でファイルをメンテナンスする事。  
 
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/Ricordanza/template-writing-with-gitlab)
+
 ## image
 [![dockeri.co](https://dockeri.co/image/ricordanza/writing-with-gitlab-textlint)](https://hub.docker.com/r/ricordanza/writing-with-gitlab-textlint)
 
