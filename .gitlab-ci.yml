@@ -19,11 +19,11 @@ pdf_build:
     - gem install md2review
   script:
     # MDからRe:VIEWファイルを作成
-    - for a in `find docs -name \*.md`; do md2review "${a}" > `basename "${a}" .md`.re; done;
+    - for a in `find docs -name \*.md | sort`; do md2review "${a}" > `basename "${a}" .md`.re; done;
     # catalog.ymlの作成
     # イメージの確認が目的なので章の順番とかは無視してとりあえずPDFにしている。
     # きちんとPDFにする場合はcatalog.ymlを手でメンテするかmdファイルの命名ルールを厳格化して自動生成しやすい構成にする。
-    - echo -e "PREDEF:\n" > catalog.yml;echo -e "CHAPS:" >> catalog.yml;for a in `find . -name \*.re`; do echo "  - `basename "${a}" .md`" >>  catalog.yml; done;echo -e "\nPREDEF:\n" >> catalog.yml;echo -e "POSTDEF:\n" >> catalog.yml;
+    - echo -e "PREDEF:\n" > catalog.yml;echo -e "CHAPS:" >> catalog.yml;for a in `find . -name \*.re | sort`; do echo "  - `basename "${a}" .md`" >>  catalog.yml; done;echo -e "\nPREDEF:\n" >> catalog.yml;echo -e "POSTDEF:\n" >> catalog.yml;
     # PDF化
     - review-pdfmaker config.yml
   artifacts:
